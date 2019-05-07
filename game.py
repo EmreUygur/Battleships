@@ -5,7 +5,7 @@ from time import sleep
 
 def select_difficulty():
   while 1:
-    print(" Zorluk Belirleyiniz")
+    print(" Select Difficulty")
     print("     1) 4 ships, 4x4 map")
     print("     2) 6 ships, 6x6 map")
     print("     3) 8 ships, 8x8 map")
