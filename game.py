@@ -145,13 +145,13 @@ def map(pc_map, user_map, difficulty):
   print("# OF SHIPS OF USER'S LEFT                 : ", (x- pc_score))
 
   if((x - pc_score) == 0):
-      # OYUNCU KAYBEDER
+      # PLAYER LOST
       return 0
   elif((x - player_score) == 0):
-      # OYUNCU KAZANIR
+      # PLAYER WIN
       return 1
   else:
-      # OYUNA DEVAM
+      # CONTINUE TO GAME
       return 2
 
  
