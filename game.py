@@ -171,9 +171,65 @@ def game(pc_map, user_map, difficulty, numOfShips):
       
     if(counter%2 == 0):
       #USER'S TURN
-      atis("USER", user_map, numOfShips)
+      shoot("USER", user_map, numOfShips)
     else:
       #CPU'S TURN
-      atis("CPU", pc_map, numOfShips)
+      shoot("CPU", pc_map, numOfShips)
     
     counter += 1
+    
+def shoot(shooter, map, numOfShips):
+  if(shooter == "USER"):
+    while 1:
+      x = input("X coordinate:")
+      y = input("Y coordinate:")
+      
+      try:
+        x = int(x)
+        y = int(y)
+        if((x<0 or x>=numOfShips) or (y<0 or y>=numOfShips)):
+          print("Out of Map. Please Choose Proper Coordinates")
+            else:
+              if(map[x][y] == 0):
+                #print("MISS")
+                map[x][y] = 3
+                break
+              elif(map[x][y] == 1):
+                #print("HIT")
+                map[x][y] = 2
+                break
+              elif(map[x][y] == 2 or map[x][y] == 3):
+                print("X:",x,"Y:",y," Coordinate Was Hit Before. Please Choose Another Coordinate")
+                  else:
+                    print("Unexpected Error. Please Choose Different Coordinate")
+      except:
+                print("Invalid Character(s)")
+  else:
+    while 1:
+    x = random.randint(0,numOfShips-1)
+    y = random.randint(0,numOfShips-1)
+    if(map[x][y] == 0):
+      #print("MISS")
+      map[x][y] = 3
+      break
+    elif(map[x][y] == 1):
+      #print("HIT")
+      map[x][y] = 2
+     break
+
+  return map
+
+def main_menu():
+  os.system("cls")
+  print("#"*40,"AMIRAL BATTI","#"*40)
+  print()
+  difficulty = select_difficulty()
+  numOfShips = 2*(difficulty+1)
+  
+  pc_map = cpu_map(numOfShips)
+  user_map = user_map(numOfShips)
+
+  game(pc_map, user_map, difficulty, numOfShips)
+  
+  
+main_menu()
