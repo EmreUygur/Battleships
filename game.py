@@ -154,4 +154,26 @@ def map(pc_map, user_map, difficulty):
       # CONTINUE TO GAME
       return 2
 
- 
+def game(pc_map, user_map, difficulty, numOfShips):
+  counter = 0
+  
+  while 1:
+    os.system("cls")
+    print("#"*40,"AMIRAL BATTI","#"*40)
+    result = map(pc_map, user_map, difficulty)
+    
+    if(result == 0):
+      print("!!! YOU LOST !!!")
+      break
+    elif(result == 1):
+      print("!!! YOU WIN !!!")
+      break
+      
+    if(counter%2 == 0):
+      #USER'S TURN
+      atis("USER", user_map, numOfShips)
+    else:
+      #CPU'S TURN
+      atis("CPU", pc_map, numOfShips)
+    
+    counter += 1
