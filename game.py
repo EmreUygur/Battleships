@@ -141,7 +141,7 @@ def map(pc_map, user_map, difficulty):
   print("\n")
   print("GAME DIFFICULTY                           : ", difficulty)
   print("# OF SHIPS USER SUNK                      : ", player_score)
-  print("# OF SHIPS USER LOST GEMILERINIZIN SAYISI : ", pc_score)
+  print("# OF SHIPS USER LOST                      : ", pc_score)
   print("# OF SHIPS OF USER'S LEFT                 : ", (x- pc_score))
 
   if((x - pc_score) == 0):
