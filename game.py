@@ -80,7 +80,7 @@ def addShip(numOfShips, map):
       
 def map(pc_map, user_map, difficulty):
   os.system("cls")
-  print("#"*40,"AMIRAL BATTI","#"*40)
+  print("#"*40,"BATTLESHIPS GAME","#"*40)
   print("")
   print("")
 
@@ -92,7 +92,7 @@ def map(pc_map, user_map, difficulty):
   player_score = 0
 
 
-  print("OYUNCU", end="")
+  print("PLAYER", end="")
   print(" "*10, end="")
   print(" "*(20+8*(difficulty-1)), end="BILGISAYAR \n")
 
@@ -159,7 +159,7 @@ def game(pc_map, user_map, difficulty, numOfShips):
   
   while 1:
     os.system("cls")
-    print("#"*40,"AMIRAL BATTI","#"*40)
+    print("#"*40,"BATTLESHIPS GAME","#"*40)
     result = map(pc_map, user_map, difficulty)
     
     if(result == 0):
@@ -221,7 +221,7 @@ def shoot(shooter, map, numOfShips):
 
 def main_menu():
   os.system("cls")
-  print("#"*40,"AMIRAL BATTI","#"*40)
+  print("#"*40,"BATTLESHIPS GAME","#"*40)
   print()
   difficulty = select_difficulty()
   numOfShips = 2*(difficulty+1)
